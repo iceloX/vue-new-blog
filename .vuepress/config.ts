@@ -6,17 +6,18 @@ import { navbarConfig } from "./config/navconfig";
 import { bulletinConfig } from "./config/bulletinconfig";
 import { commentConfig } from "./config/commentconfig";
 import { friendLinkConfig } from "./config/friendlinkconfig";
+import { searchConfig } from "./config/searchconfig";
 
 export default defineUserConfig({
   title: '冰洛博客',
   theme: recoTheme({
-    repo: 'https://github.com/iceloX/vue-new-blog',
+    repo: 'iceloX/vue-new-blog',
     author: "icelo",
     authorAvatar: "/head.jpg",
     docsBranch: "main",
     sourceDir: '/docs',
     logo:'logo.png',
-    lastUpdatedText: "",
+    lastUpdatedText: "上次更新",
     // 自定义目录标题
     catalogTitle: '自定义目录标题',
     // 自动设置分类
@@ -27,12 +28,24 @@ export default defineUserConfig({
     series: seriesConfig,
     // 顶部设置
     navbar: navbarConfig,
+    // 搜索
+    algolia:searchConfig,
+    // 插件
     // 公告栏设置
-    bulletin: bulletinConfig,
+    // bulletin: bulletinConfig,
     // 评论配置
     commentConfig: commentConfig,
     // 友链
-    friendshipLinks: friendLinkConfig
+    friendshipLinks: friendLinkConfig,
+    // 插件
+    plugins:[
+      // ["vuepress-plugin-nuggets-style-copy", {
+      //   copyText: "复制代码",
+      //   tip: {
+      //       content: "复制成功!"
+      //   }
+      // }]
+    ]
   }),
   // debug: true,
 });

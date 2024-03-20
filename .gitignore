@@ -2,4 +2,5 @@
 .vuepress/.temp
 node_modules
 .DS_Storegit
+package-lock.json
 deploy.sh
